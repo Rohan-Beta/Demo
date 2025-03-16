@@ -13,7 +13,8 @@ app.get("/", async (req, res) => {
 
     // res.send("hello world")
 
-    const response = await axios.get('http://localhost:5000/');
+    // const response = await axios.get('http://localhost:5000/');
+    const response = await axios.get('https://demo-tqeb.onrender.com/');
     res.json(response.data)
   });
 
@@ -22,7 +23,10 @@ app.post('/predict', async (req, res) => {
   try {
     const { inputsymptoms }  = req.body;
 
-    const response = await axios.post('http://127.0.0.1:5000/predict' ,{
+    // const response = await axios.post('http://127.0.0.1:5000/predict' ,{
+    //   symp: inputsymptoms
+    // });
+    const response = await axios.post('https://demo-tqeb.onrender.com/predict' ,{
       symp: inputsymptoms
     });
 
